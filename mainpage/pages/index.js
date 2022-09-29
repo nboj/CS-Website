@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 // assets
-import background from '../assets/page-backdrop.jpg';
-import C from '../assets/C.png';
-import S from '../assets/S.png';
+import background from '/public/page-backdrop.jpg';
+import C from '/public/C.png';
+import S from '/public/S.png';
 
 const Styles = styled.div`
   & {
