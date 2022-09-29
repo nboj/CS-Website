@@ -13,7 +13,7 @@ const Styles = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(${background.src});
+    background: url(${background.src});
     width: 100vw;
     height: 100vh;
     background-size: cover;
