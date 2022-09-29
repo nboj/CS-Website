@@ -8,7 +8,6 @@ import S from '/public/S.png';
 
 const Styles = styled.div`
   & {
-    @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,7 +1,22 @@
 import Document from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import {Html, Head, Main, NextScript} from 'next/document';
 
-export default class MyDocument extends Document {
+export default class MyDocument extends Document { 
+  render() {
+    return(
+      <Html>
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com"/> 
+          <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet"/>
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
