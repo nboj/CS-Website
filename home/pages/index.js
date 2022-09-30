@@ -105,6 +105,7 @@ const Home = () => {
     let minutes = current.getMinutes().toString().padStart(2, '0');
     setFormattedTime((o) => `Date: ${current.toDateString()} Time:${hours}:${minutes}:${seconds + suffix}`);
   }, 1000)
+  
   return (
     <Styles>
       <Head>
