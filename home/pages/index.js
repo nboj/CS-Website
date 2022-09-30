@@ -97,7 +97,7 @@ const Home = () => {
       hours = fullHours - 12;
       suffix = 'pm';
     } else if (fullHours < 1) {
-      hours = 1;
+      hours = 12;
       suffix = 'am';
     } else {
       suffix = 'am';
