@@ -9,6 +9,7 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com"/> 
           <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet"/>
+          {/* <title>CS 10051</title> */}
         </Head>
         <body>
           <Main />
