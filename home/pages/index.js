@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import useInterval from '../components/useInterval';
+import CircularProgress from '@mui/material/CircularProgress';
 
 // assets
 import background from '/public/background.jpg';
@@ -85,7 +86,7 @@ const Styles = styled.div`
 `;
 
 const Home = () => {
-  const [formattedTime, setFormattedTime] = useState("");
+  const [formattedTime, setFormattedTime] = useState(null);
   useInterval(() => {
     let current = new Date();
     let fullHours = current.getHours()
@@ -105,7 +106,7 @@ const Home = () => {
     let minutes = current.getMinutes().toString().padStart(2, '0');
     setFormattedTime((o) => `Date: ${current.toDateString()} Time:${hours}:${minutes}:${seconds + suffix}`);
   }, 1000)
-  
+
   return (
     <Styles>
       <Head>
@@ -129,7 +130,13 @@ const Home = () => {
               <a className="link-button">Lab #5 Folder</a>
             </li>
           </ul>
-          <p>{formattedTime}</p>
+          <div>
+            {
+              formattedTime
+              ?<p>{formattedTime}</p>
+              :<CircularProgress sx={{color: '#cad2c5'}} />
+            }
+          </div>
         </div>
       </header>
     </Styles>
