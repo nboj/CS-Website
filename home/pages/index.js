@@ -1,11 +1,15 @@
+// next/react components
 import Head from 'next/head';
+import Link from 'next/Link';
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
+
+//other components
+import styled from 'styled-components'; 
 import useInterval from '../components/useInterval';
 import CircularProgress from '@mui/material/CircularProgress';
 
 // assets
-import background from '/public/background.jpg';
+import background from '/public/background.jpg'; 
 
 const Styles = styled.div`
   & {
@@ -35,6 +39,7 @@ const Styles = styled.div`
       width: fit-content;
       height: fit-content;
       padding: 10px 15px;
+      cursor: pointer;
       transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
   }
 
@@ -85,15 +90,14 @@ const Styles = styled.div`
   
 `;
 
-const Home = () => {
+const Home = () => { 
   const [formattedDate, setFormattedDate] = useState(null);
   const [formattedTime, setFormattedTime] = useState(null);
   useInterval(() => {
     let current = new Date();
     let fullHours = current.getHours()
     let hours = fullHours;
-    let suffix;
-    console.log(fullHours)
+    let suffix; 
     if (fullHours > 13) {
       hours = fullHours - 12;
       suffix = 'pm';
@@ -124,12 +128,9 @@ const Home = () => {
             <a className="link-button" href="https://web.cs.kent.edu/~cauman/">My Homepage</a>
           </div>
           <h3>This webpage contains access to folders that will contain html files I create in my cs10051 labs</h3>
-          <ul className="list-style-none list-gap-10">
+          <ul className="list-style-none list-gap-10"> 
             <li>
-              <a className="link-button text-red">Lab #5 Folder</a>
-            </li>
-            <li>
-              <a className="link-button">Lab #5 Folder</a>
+              <Link href='/lab-5'><span className="link-button">Lab #5 Folder</span></Link>
             </li>
           </ul>
           <div>
