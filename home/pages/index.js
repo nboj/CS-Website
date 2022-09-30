@@ -86,6 +86,7 @@ const Styles = styled.div`
 `;
 
 const Home = () => {
+  const [formattedDate, setFormattedDate] = useState(null);
   const [formattedTime, setFormattedTime] = useState(null);
   useInterval(() => {
     let current = new Date();
@@ -104,7 +105,8 @@ const Home = () => {
     }
     let seconds = current.getSeconds().toString().padStart(2, '0');
     let minutes = current.getMinutes().toString().padStart(2, '0');
-    setFormattedTime((o) => `Date: ${current.toDateString()} Time:${hours}:${minutes}:${seconds + suffix}`);
+    setFormattedDate(`${current.toDateString()}`)
+    setFormattedTime(`${hours}:${minutes}:${seconds + suffix}`);
   }, 1000)
 
   return (
@@ -132,8 +134,8 @@ const Home = () => {
           </ul>
           <div>
             {
-              formattedTime
-              ?<p>{formattedTime}</p>
+              formattedDate && formattedTime
+              ?<div><p><b>Date:&nbsp;&nbsp;</b>{formattedDate}</p><p><b>Time:&nbsp;&nbsp;</b>{formattedTime}</p></div>
               :<CircularProgress sx={{color: '#cad2c5'}} />
             }
           </div>
