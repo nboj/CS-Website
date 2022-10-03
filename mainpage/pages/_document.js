@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet"/>
           {/* <title>CS 10051</title> */}
         </Head>
-        <body>
+        <body> 
           <Main />
           <NextScript />
         </body>

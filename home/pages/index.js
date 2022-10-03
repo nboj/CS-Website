@@ -130,7 +130,7 @@ const Home = () => {
           <h3>This webpage contains access to folders that will contain html files I create in my cs10051 labs</h3>
           <ul className="list-style-none list-gap-10"> 
             <li>
-              <Link href='/lab-5'><span className="link-button">Lab #5</span></Link>
+              <Link href='/lab-6'><span className="link-button">Lab #6</span></Link>
             </li>
           </ul>
           <div>

@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import Image from 'next/image'; 
-import {motion} from 'framer-motion'; 
-import { forwardRef, useState } from 'react';
+import {motion, useInView} from 'framer-motion'; 
+import { forwardRef, useState, useRef, useEffect } from 'react';
 import Head from 'next/head';
+import {Skeleton} from '@mui/material';
 
 // assets
 import background from '/public/page-backdrop.jpg';
@@ -15,7 +16,7 @@ const Styles = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(${background.src});
+    background: url(${props => props.readyToLoad?background.src:''});
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -59,6 +60,7 @@ const NameText = styled.h1`
 `;
 
 const Home = () => {  
+  const [readyToLoad, setReadyToLoad] = useState(false);
   const letterVariants = {
     initial: i => ({
       x: 90*i,   
@@ -176,17 +178,19 @@ const Home = () => {
   const handleButtonClick = (e) => {
     e.preventDefault();
     location.href = 'https://kent.christianauman.com';
-  }
+  } 
   return (
-    <Styles> 
+    <Styles readyToLoad={readyToLoad}> 
       <Head>
         <title>CS 10051</title>
       </Head>
+      {!readyToLoad?<div><Skeleton variant='rectangular' width='100%' height='100%' className='absolute' />
+      <img src={background.src} className='hidden' onLoad={setReadyToLoad(true)}/></div>:null}
       <motion.div variants={titleVariants} initial='initial' whileInView='visible' viewport={{once: true}}><NameText>Christian Auman</NameText></motion.div>
       <div className="w-full flex justify-center gap-x-36 items-center">
         <motion.div variants={letterVariants} custom={-1} initial='initial' whileInView='visible' viewport={{once: true}}><Image src={C.src} width={428} height={428} /></motion.div>
         <motion.div onClick={handleButtonClick} onHoverStart={() => {setPlayRingAnim(true)}} onHoverEnd={() => {setPlayRingAnim(false)}} variants={buttonVariants} initial='initial' animate={playRingAnim?'hover':'visible'}>
-          <StartButton >
+          <StartButton>
             <svg width="97" height="97" viewBox="0 0 97 97" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M48.5 94.75C74.0432 94.75 94.75 74.0432 94.75 48.5C94.75 22.9568 74.0432 2.25 48.5 2.25C22.9568 2.25 2.25 22.9568 2.25 48.5C2.25 74.0432 22.9568 94.75 48.5 94.75Z" stroke="#F5F5F5" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
