@@ -51,6 +51,9 @@ const Styles = styled.div`
 
 const ShortLabContainer = ({title, subtitle, description, buttonText, inputText, id, useOtherButton, otherButtonText, disableInput=false, disableSubmit=false, ...props}) => { 
     const ref = useRef(null);
+    if (disableInput) {
+        document.getElementById("input" + id).value = '';
+    }
     return (
         <Styles> 
             <h1>{title}</h1>
@@ -62,7 +65,7 @@ const ShortLabContainer = ({title, subtitle, description, buttonText, inputText,
                 variant='outlined' 
                 sx={{width: '80%', margin: '10px 0 30px 0'}}
                 ref={ref}
-                onChange={props.onChange}
+                onChange={(e) => {props.onChange(e, `input${id}`)}}
                 disabled={disableInput}
             />
             <h4 className='text-left'>{description}</h4>  

@@ -34,10 +34,14 @@ const Styles = styled.div`
         border-radius: 18px;
     }
     & .output-container {  
+        overflow-y: scroll;
+        margin: 20px;
         display: none;  
         justify-content: center;
         align-items: center;
         user-select: none;
+        word-break: break-all;
+        line-break: strict;
     }
 `;
  
@@ -48,7 +52,7 @@ const ShortLabTemplate = ({output, changeLayout, ...props}) => {
             borderTopRightRadius: 18,
             borderBottomRightRadius: 18,
             transition: {
-                type: 'Spring',
+                type: 'spring',
                 damping: 30,
             }
         },
@@ -60,12 +64,12 @@ const ShortLabTemplate = ({output, changeLayout, ...props}) => {
     const outerContainerVariants = {
         initial: { 
             width: initialContainerWidth,
-            borderRight: ['0px solid rgba(53, 48, 48, 0.31)','0px solid rgba(53, 48, 48, 0.31)'],
+            borderRight: ['0px solid rgba(53, 48, 48, 0.31)','0px solid rgba(53, 48, 48, 0.31)'], 
             transition: {
-                type: 'Spring', 
-                damping: 100,
-                stiffness: 1,
-                mass: 3,
+                type: 'spring', 
+                stiffness: 100,
+                damping: 10,
+                mass: 0.2, 
             }
         },
         change: {

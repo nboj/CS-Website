@@ -132,6 +132,9 @@ const Home = () => {
             <li>
               <Link href='/lab-6'><span className="link-button">Lab #6</span></Link>
             </li>
+            <li>
+              <Link href='/lab-7'><span className="link-button">Lab #7</span></Link>
+            </li>
           </ul>
           <div>
             {

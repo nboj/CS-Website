@@ -14,7 +14,7 @@ const Styles = styled.div`
         height: fit-content;
         position: absolute;
         left: 50%;
-        bottom: 10px;
+        bottom: 30px;
         transform: translate3d(-50%, 0, 0);
         gap: 5px;
     }
