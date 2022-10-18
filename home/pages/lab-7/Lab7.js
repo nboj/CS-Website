@@ -1,6 +1,3 @@
-import Head from "next/head";
-import DisplayLinks from "../../components/DisplayLinks";
-
 class Lab7 {
     static GetLinks = () => {
         return [
