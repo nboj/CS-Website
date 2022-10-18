@@ -133,7 +133,7 @@ const DisplayLinks = ({links, homeLink, ...props}) => {
                 links.map((item, index) => {
                     return (
                         <li key={`${item.href}/${index}`} className='w-fit'>
-                            <div onClickCapture={(e) => props.onClick(e, links, index)}><span id={index} className='link-button'>{item.title}</span></div>
+                            <div onClickCapture={(e) => props.onClick(e, links, index)}><span id={index} style={item.current?{backgroundColor: '#ffca3a', color: 'white', fontWeight: 500, border: '1px solid yellow'}:{}} className='link-button'>{item.title}</span></div>
                         </li>
                     )
                 })

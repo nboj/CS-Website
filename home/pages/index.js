@@ -6,15 +6,18 @@ import { useEffect, useState } from 'react';
 
 //other components
 import styled from 'styled-components'; 
-import useInterval from '../components/useInterval';
-import CircularProgress from '@mui/material/CircularProgress';
+import useInterval from '../components/useInterval'; 
 
 // assets
 import background from '/public/background.jpg'; 
 import DisplayLinks from '../components/DisplayLinks';
 
-import Lab7 from '../components/Lab7';
-import Lab6 from '../components/Lab6';
+// custom helper scripts
+import utils from '../components/helper-classes/utils';
+import Lab6 from '../components/helper-classes/Lab6';
+import Lab7 from '../components/helper-classes/Lab7';
+import Lab8 from '../components/helper-classes/Lab8';
+import Lab9 from '../components/helper-classes/Lab9';
 
 const Styles = styled.div`
   & {
@@ -95,6 +98,13 @@ const Styles = styled.div`
   
 `;
 
+const defaultLinks = [
+  {title: 'Lab #6', class: Lab6},
+  {title: 'Lab #7', class: Lab7, current: true},
+  {title: 'Lab #8', class: Lab8},
+  {title: 'Lab #9', class: Lab9}
+]
+
 const Home = () => { 
   const [formattedDate, setFormattedDate] = useState(null);
   const [formattedTime, setFormattedTime] = useState(null);
@@ -121,10 +131,7 @@ const Home = () => {
   }, 1000)
 
   const reset = () => {
-    setLinks([
-      {href: 'lab-6', title: 'Lab #6', class: Lab6},
-      {href: 'lab-7', title: 'Lab #7', class: Lab7},
-    ])
+    setLinks(defaultLinks)
     setHomeLink({
       href: 'https://web.cs.kent.edu/~cauman/',
       title: 'My Homepage'
@@ -133,7 +140,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    reset()
+    reset() 
   }, [])
 
   const handleLink = (e, links, index) => {
@@ -152,7 +159,7 @@ const Home = () => {
 
 
   const handleHomeLink = (e) => { 
-    e.preventDefault()
+    e.preventDefault() 
     reset()
   }
 
