@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Head from 'next/Head' 
+import Head from 'next/head' 
 import { TextField, Button } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import Back from '../../../components/Back';

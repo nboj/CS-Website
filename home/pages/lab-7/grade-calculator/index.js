@@ -129,8 +129,7 @@ const GradeCalculator = () => {
         let totalGrade = 0
         for (let i = 0; i < data.length; i++) {
             const el = document.getElementById(`grade${i}`)
-            const weight = data[i].weightNum
-            console.log(weight)
+            const weight = data[i].weightNum 
             totalGrade += el.value * (weight/100)
         }
         setGrade(Math.round(totalGrade*100)/100) 
