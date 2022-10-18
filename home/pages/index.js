@@ -13,8 +13,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 import background from '/public/background.jpg'; 
 import DisplayLinks from '../components/DisplayLinks';
 
-import Lab7 from './lab-7/Lab7';
-import Lab6 from './lab-6/Lab6';
+import Lab7 from '../components/Lab7';
+import Lab6 from '../components/Lab6';
 
 const Styles = styled.div`
   & {
