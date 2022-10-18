@@ -1,7 +1,6 @@
 // next/react components
 import Head from 'next/head';
 import Link from 'next/link';
-import Router from 'next/router';
 import { useEffect, useState } from 'react';
 
 //other components
@@ -11,10 +10,6 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 // assets
 import background from '/public/background.jpg'; 
-import DisplayLinks from '../components/DisplayLinks';
-
-import Lab7 from './lab-7';
-import Lab6 from './lab-6';
 
 const Styles = styled.div`
   & {
@@ -95,11 +90,9 @@ const Styles = styled.div`
   
 `;
 
-const Home = () => { 
+const DisplayLinks = ({links, homeLink, ...props}) => { 
   const [formattedDate, setFormattedDate] = useState(null);
   const [formattedTime, setFormattedTime] = useState(null);
-  const [links, setLinks] = useState([])
-  const [homeLink, setHomeLink] = useState({})
   useInterval(() => {
     let current = new Date();
     let fullHours = current.getHours()
@@ -120,55 +113,43 @@ const Home = () => {
     setFormattedTime(`${hours}:${minutes}:${seconds + suffix}`);
   }, 1000)
 
-  const reset = () => {
-    setLinks([
-      {href: 'lab-6', title: 'Lab #6', class: Lab6},
-      {href: 'lab-7', title: 'Lab #7', class: Lab7},
-    ])
-    setHomeLink({
-      href: 'https://web.cs.kent.edu/~cauman/',
-      title: 'My Homepage'
-    })
-    
-  }
-
-  useEffect(() => {
-    reset()
-  }, [])
-
-  const handleLink = (e, links, index) => {
-    e.preventDefault() 
-    const link = links[index]
-    if (link.link) {
-      Router.push(`${links[index].href}`)
-    } else {
-      setLinks(links[index].class.GetLinks())  
-      setHomeLink({
-        href: '/',
-        title: 'Home'
-      })
-    }
-  }
-
-
-  const handleHomeLink = (e) => { 
-    e.preventDefault()
-    reset()
-  }
-
   return (
     <Styles>
       <Head>
         <title>CS 10051</title>
       </Head>
-      <DisplayLinks 
-        onClick={handleLink}
-        onHomeClick={handleHomeLink}
-        links={links} 
-        homeLink={homeLink}
-      />
+      <header className="w-full h-full flex flex-col justify-center items-center m-0 night-background">
+        <div className="inner-header flex flex-col w-fit">
+          <div className="flex flex-col w-full">
+            <h1 className="title">My cs10051 Lab Work</h1>
+            <h2 className='text-2xl'>Christian Auman</h2>
+          </div>
+          <div>
+            <a className="link-button" onClickCapture={props.onHomeClick} href={homeLink.href}>{homeLink.title}</a>
+          </div>
+          <h3>This webpage contains access to folders that will contain html files I create in my cs10051 labs</h3>
+          <ul className="list-style-none gap-10 flex flex-col flex-wrap w-fit" style={{height: 170}}>  
+            {
+                links.map((item, index) => {
+                    return (
+                        <li key={`${item.href}/${index}`} className='w-fit'>
+                            <div onClickCapture={(e) => props.onClick(e, links, index)}><span id={index} className='link-button'>{item.title}</span></div>
+                        </li>
+                    )
+                })
+            }
+          </ul>
+          <div>
+            {
+              formattedDate && formattedTime
+              ?<div><p><b>Date:&nbsp;&nbsp;</b>{formattedDate}</p><p><b>Time:&nbsp;&nbsp;</b>{formattedTime}</p></div>
+              :<CircularProgress sx={{color: '#cad2c5'}} />
+            }
+          </div>
+        </div>
+      </header>
     </Styles>
   );
 }
 
-export default Home;
+export default DisplayLinks;
