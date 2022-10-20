@@ -105,36 +105,16 @@ const defaultLinks = [
   {title: 'Lab #9', class: Lab9}
 ]
 
-const Home = () => { 
-  const [formattedDate, setFormattedDate] = useState(null);
-  const [formattedTime, setFormattedTime] = useState(null);
+const Home = () => {  
   const [links, setLinks] = useState([])
-  const [homeLink, setHomeLink] = useState({})
-  useInterval(() => {
-    let current = new Date();
-    let fullHours = current.getHours()
-    let hours = fullHours;
-    let suffix; 
-    if (fullHours > 13) {
-      hours = fullHours - 12;
-      suffix = 'pm';
-    } else if (fullHours < 1) {
-      hours = 12;
-      suffix = 'am';
-    } else {
-      suffix = 'am';
-    }
-    let seconds = current.getSeconds().toString().padStart(2, '0');
-    let minutes = current.getMinutes().toString().padStart(2, '0');
-    setFormattedDate(`${current.toDateString()}`)
-    setFormattedTime(`${hours}:${minutes}:${seconds + suffix}`);
-  }, 1000)
+  const [homeLink, setHomeLink] = useState() 
 
   const reset = () => {
     setLinks(defaultLinks)
     setHomeLink({
       href: 'https://web.cs.kent.edu/~cauman/',
-      title: 'My Homepage'
+      title: 'My Homepage',
+      isLink: true
     })
     
   }
@@ -158,9 +138,13 @@ const Home = () => {
   }
 
 
-  const handleHomeLink = (e) => { 
-    e.preventDefault() 
-    reset()
+  const handleHomeLink = (e, href) => {  
+    e.preventDefault()  
+    if (href) {
+      Router.push(href)
+    } else {
+      reset()
+    }
   }
 
   return (

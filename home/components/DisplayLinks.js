@@ -125,7 +125,7 @@ const DisplayLinks = ({links, homeLink, ...props}) => {
             <h2 className='text-2xl'>Christian Auman</h2>
           </div>
           <div>
-            <a className="link-button" onClickCapture={props.onHomeClick} href={homeLink.href}>{homeLink.title}</a>
+            <a onClickCapture={(e) => homeLink && homeLink.isLink?props.onHomeClick(e, homeLink.href):props.onHomeClick(e)} href={homeLink&&homeLink.isLink?homeLink.href:''}><p className="link-button">{homeLink?homeLink.title:''}</p></a>
           </div>
           <h3>This webpage contains access to folders that will contain html files I create in my cs10051 labs</h3>
           <ul className="list-style-none gap-10 flex flex-col flex-wrap w-fit" style={{height: 170}}>  
