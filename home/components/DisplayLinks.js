@@ -115,9 +115,6 @@ const DisplayLinks = ({links, homeLink, ...props}) => {
 
   return (
     <Styles>
-      <Head>
-        <title>CS 10051</title>
-      </Head>
       <header className="w-full h-full flex flex-col justify-center items-center m-0 night-background">
         <div className="inner-header flex flex-col w-fit">
           <div className="flex flex-col w-full">

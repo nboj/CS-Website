@@ -17,6 +17,7 @@ const Styles = styled.div`
         bottom: 30px;
         transform: translate3d(-50%, 0, 0);
         gap: 5px;
+        user-select: none;
     }
     & h1 { 
         font-family: 'Heebo';

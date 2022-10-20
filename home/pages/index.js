@@ -100,7 +100,7 @@ const Styles = styled.div`
 
 const defaultLinks = [
   {title: 'Lab #6', class: Lab6},
-  {title: 'Lab #7', class: Lab7, current: true},
+  {title: 'Lab #7', class: Lab7},
   {title: 'Lab #8', class: Lab8},
   {title: 'Lab #9', class: Lab9}
 ]
@@ -109,7 +109,12 @@ const Home = () => {
   const [links, setLinks] = useState([])
   const [homeLink, setHomeLink] = useState() 
 
-  const reset = () => {
+  const reset = (currentLab) => { 
+    defaultLinks.map(item => {
+      if (item.title == currentLab) { 
+        item.current = true
+      }
+    })
     setLinks(defaultLinks)
     setHomeLink({
       href: 'https://web.cs.kent.edu/~cauman/',
@@ -120,7 +125,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    reset() 
+    reset('Lab #8') 
   }, [])
 
   const handleLink = (e, links, index) => {
