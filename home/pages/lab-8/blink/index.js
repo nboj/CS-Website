@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 import Back from '../../../components/Back';
 
 // assets
-import blinkImg from '../../../public/lab-8-assets/blink-spritesheet.png';
+import blinkImg from '../../../public/lab-8-assets/blink/blink-spritesheet.png';
 import { useEffect, useState } from 'react';
 
 const fullSize = Math.round(blinkImg.width/2);
