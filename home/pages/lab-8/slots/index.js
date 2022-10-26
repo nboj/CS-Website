@@ -204,7 +204,7 @@ const Slots = () => {
                     <Button variant='outlined' color='inherit' sx={{color: '#fee440'}} onClick={() => setCheats(cheats => !cheats)}>Cheatmode {cheats?'on':'off'}</Button> 
                 </div>
             </div>
-            <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-8/slots/index.js' />
+            <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-8/slots/index.js' theme='dark' />
             <Back variant='light' />
         </Styles>
     )

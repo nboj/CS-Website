@@ -10,6 +10,7 @@ import {motion} from 'framer-motion';
 // my components
 import ShortLabTemplate from '../../../components/ShortLabTemplate';
 import ShortLabContainer from '../../../components/ShortLabContainer';
+import GitLink from '../../../components/GitLink';
 
 const Styles = styled.div`
     & .back-button {
@@ -173,6 +174,7 @@ const Lab6 = () => {
                         disableInput={disabled}
                         />
                 </motion.div>
+                <GitLink/>
             </ShortLabTemplate>
         </Styles>
     );

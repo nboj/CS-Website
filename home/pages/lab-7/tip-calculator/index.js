@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { TextField, Button } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import Back from '../../../components/Back';
+import GitLink from '../../../components/GitLink';
 
 const Styles = styled.div`
     & {
@@ -43,6 +44,7 @@ const TipCalculator = () => {
                 <Button onClick={handleCalculate} variant='outlined' className='w-fit -translate-x-1/2 left-1/2'>Calculate</Button>
                 <p className='w-full text-center mt-5'>{output}</p>
             </div>
+            <GitLink/>
             <Back />
         </Styles>
     )

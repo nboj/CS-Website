@@ -12,12 +12,13 @@ import useInterval from '../components/useInterval';
 import background from '/public/background.jpg'; 
 import DisplayLinks from '../components/DisplayLinks';
 
-// custom helper scripts
+// my custom utility scripts
 import utils from '../components/helper-classes/utils';
 import Lab6 from '../components/helper-classes/Lab6';
 import Lab7 from '../components/helper-classes/Lab7';
 import Lab8 from '../components/helper-classes/Lab8';
 import Lab9 from '../components/helper-classes/Lab9';
+import GitLink from '../components/GitLink';
 
 const Styles = styled.div`
   & {
@@ -163,6 +164,7 @@ const Home = () => {
         links={links} 
         homeLink={homeLink}
       />
+      <GitLink theme='dark' href='https://github.com/nboj/CS-Website/blob/main/home/pages/index.js' />
     </Styles>
   );
 }

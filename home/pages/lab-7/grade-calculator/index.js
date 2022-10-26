@@ -9,6 +9,7 @@ import { Input, Button } from '@mui/material';
 // custom imports
 import Back from '../../../components/Back';
 import FlipCard from '../../../components/FlipCard'
+import GitLink from '../../../components/GitLink';
 
 const Styles = styled.div`
     & .outer-container {
@@ -195,6 +196,7 @@ const GradeCalculator = () => {
                     </FlipCard>
                 </div>
             </div>
+            <GitLink/>
             <Back />
         </Styles>
     )

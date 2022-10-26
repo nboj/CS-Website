@@ -12,6 +12,7 @@ import Back from '../../../components/Back';
 // assets
 import blinkImg from '../../../public/lab-8-assets/blink/blink-spritesheet.png';
 import { useEffect, useState } from 'react';
+import GitLink from '../../../components/GitLink';
 
 const fullSize = Math.round(blinkImg.width/2);
 const spriteSize = fullSize/4;
@@ -92,6 +93,7 @@ const Blink = () => {
                     <Button onClick={() => {handleBlink(0.05)}} disabled={blink} variant='outlined'>fast blink</Button>
                 </div> 
             </div>
+            <GitLink/>
             <Back />
         </Styles>
     )

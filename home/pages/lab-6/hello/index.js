@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 // custom components
 import Back from '../../../components/Back'
+import GitLink from "../../../components/GitLink"
 
 const variants = { 
     initial: { 
@@ -91,6 +92,7 @@ const Hello = () => {
                     <button onMouseLeave={handleMouseLeave} onMouseOver={handleMouseOver}>hover me</button>
                 </div>
             </div>
+            <GitLink/>
             <Back />
         </div>
     )

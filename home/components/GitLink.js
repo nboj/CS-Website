@@ -6,15 +6,18 @@ const Styles = styled.div`
         position: absolute;
         top: 0;
         right: 0;
-        color: white;
+        color: ${props => props.theme == 'light'?'black':'white'};
         margin: 10px;
+        backdrop-filter: blur(10px);
+        text-decoration: underline;
+        font-weight: 400;
     }
 `;
 
-const GitLink = ({href='/404'}) => {
+const GitLink = ({href='https://github.com/nboj/CS-Website/tree/main/home', theme='light'}) => {
     return (
-        <Styles>
-            <a href={href} target="_blank">View the code here</a>
+        <Styles theme={theme}>
+            <a href={href} target="_blank">View the source code here</a>
         </Styles>
     )
 }
