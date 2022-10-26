@@ -17,7 +17,7 @@ const Styles = styled.div`
 const GitLink = ({href='https://github.com/nboj/CS-Website/tree/main/home', theme='light'}) => {
     return (
         <Styles theme={theme}>
-            <a href={href} target="_blank">View the source code here</a>
+            <a href={href} target="_blank" rel='noreferer'>View the source code here</a>
         </Styles>
     )
 }
