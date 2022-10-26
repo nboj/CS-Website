@@ -205,6 +205,7 @@ const Slots = () => {
                 </div>
             </div>
             <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-8/slots/index.js' theme='dark' />  
+            <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/components/helper-classes/utils.js' topOffset={20} text='View random src code' theme='dark' />  
             <Back variant='light' />
         </Styles>
     )

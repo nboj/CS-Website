@@ -11,7 +11,7 @@ const Styles = styled.div`
         backdrop-filter: blur(10px);
         text-decoration: underline;
         font-weight: 400;
-        transform: translateY(${props => props.topOffset});
+        transform: translateY(${props => props.topOffset}px);
     }
 `;
 
