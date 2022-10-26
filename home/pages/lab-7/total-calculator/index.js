@@ -51,7 +51,7 @@ const TotalCalculator = () => {
                 <Button onClick={handleCalculate} variant='outlined' className='w-fit -translate-x-1/2 left-1/2'>Calculate</Button>
                 <p className='w-full text-center mt-5'>{output}</p>
             </div>
-            <GitLink/>
+            <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-7/total-calculator/index.js' />
             <Back />
         </Styles>
     )

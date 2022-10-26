@@ -1,21 +1,21 @@
 // built in components 
 import Head from 'next/head'
+import { useEffect, useState, forwardRef, useRef } from 'react';
 // my components
 import Back from '../../../components/Back'
 import utils from '../../../components/helper-classes/utils'
 import Slot from '../../../components/lab-8/Slot'
+import AnimatedPoints from '../../../components/AnimatedPoints'
+import GitLink from '../../../components/GitLink'
+import useInterval from '../../../components/useInterval'
 // 3rd party components
 import styled from 'styled-components'
 import { Button } from '@mui/material'
 import { motion } from 'framer-motion'
-import useInterval from '../../../components/useInterval'
 // assets
 import bg from '../../../public/lab-8-assets/slots/background.jpg';
 import slotsContainerSpritesheet from '../../../public/lab-8-assets/slots/slot-machine-spritesheet.png'; 
 import slotSpritesheet from '../../../public/lab-8-assets/slots/slot-spritesheet.png';
-import { useEffect, useState, forwardRef, useRef } from 'react';
-import AnimatedPoints from '../../../components/AnimatedPoints'
-import GitLink from '../../../components/GitLink'
 
 const slotOffset = slotSpritesheet.height/4;
 const machineOffset = slotsContainerSpritesheet.height/6
@@ -204,7 +204,7 @@ const Slots = () => {
                     <Button variant='outlined' color='inherit' sx={{color: '#fee440'}} onClick={() => setCheats(cheats => !cheats)}>Cheatmode {cheats?'on':'off'}</Button> 
                 </div>
             </div>
-            <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-8/slots/index.js' theme='dark' />
+            <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-8/slots/index.js' theme='dark' />  
             <Back variant='light' />
         </Styles>
     )

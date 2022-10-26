@@ -196,7 +196,7 @@ const GradeCalculator = () => {
                     </FlipCard>
                 </div>
             </div>
-            <GitLink/>
+            <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-7/grade-calculator/index.js' />
             <Back />
         </Styles>
     )

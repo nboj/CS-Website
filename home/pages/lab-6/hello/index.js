@@ -92,7 +92,7 @@ const Hello = () => {
                     <button onMouseLeave={handleMouseLeave} onMouseOver={handleMouseOver}>hover me</button>
                 </div>
             </div>
-            <GitLink/>
+            <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-6/hello/index.js' />
             <Back />
         </div>
     )

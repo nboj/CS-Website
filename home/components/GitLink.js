@@ -11,13 +11,14 @@ const Styles = styled.div`
         backdrop-filter: blur(10px);
         text-decoration: underline;
         font-weight: 400;
+        transform: translateY(${props => props.topOffset});
     }
 `;
 
-const GitLink = ({href='https://github.com/nboj/CS-Website/tree/main/home', theme='light'}) => {
+const GitLink = ({href='https://github.com/nboj/CS-Website/tree/main/home', topOffset=0, text='View the source code here', theme='light'}) => {
     return (
-        <Styles theme={theme}>
-            <a href={href} target="_blank" rel='noreferrer'>View the source code here</a>
+        <Styles theme={theme} topOffset={topOffset}>
+            <a href={href} target="_blank" rel='noreferrer'>{text}</a>
         </Styles>
     )
 }
