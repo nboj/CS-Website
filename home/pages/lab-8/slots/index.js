@@ -15,6 +15,7 @@ import slotsContainerSpritesheet from '../../../public/lab-8-assets/slots/slot-m
 import slotSpritesheet from '../../../public/lab-8-assets/slots/slot-spritesheet.png';
 import { useEffect, useState, forwardRef, useRef } from 'react';
 import AnimatedPoints from '../../../components/AnimatedPoints'
+import GitLink from '../../../components/GitLink'
 
 const slotOffset = slotSpritesheet.height/4;
 const machineOffset = slotsContainerSpritesheet.height/6
@@ -203,6 +204,7 @@ const Slots = () => {
                     <Button variant='outlined' color='inherit' sx={{color: '#fee440'}} onClick={() => setCheats(cheats => !cheats)}>Cheatmode {cheats?'on':'off'}</Button> 
                 </div>
             </div>
+            <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-8/slots/index.js' />
             <Back variant='light' />
         </Styles>
     )
