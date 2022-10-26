@@ -171,7 +171,7 @@ const Slots = () => {
         completeCount = 0; 
         setOffsets.map((item) => {
             item(utils.random(0, max))
-        })
+        }) 
         return () => clearInterval(autoplayInterval)
     }, []) 
 

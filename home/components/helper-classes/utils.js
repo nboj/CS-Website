@@ -4,7 +4,7 @@ class utils {
     }
     static roundedRandom = (min, max) => {
         return Math.round(this.random(min, max))
-    }
+    } 
 }
 
 export default utils;
