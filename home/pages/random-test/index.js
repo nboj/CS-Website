@@ -87,7 +87,7 @@ const RandomTest = () => {
     } else if (currentState === 1) {
         return (
             <div className='flex w-full h-screen justify-center items-center'> 
-                <CircularProgress style={{strokeDasharray: 100}} color='success' size={208} />
+                <CircularProgress style={{strokeDasharray: 100}} size={208} />
                 <Back/>
             </div>
         )   
@@ -113,7 +113,7 @@ const RandomTest = () => {
                     </Grid>
                 </div>
                 <BTN>
-                    <Button variant='contained' onClick={() => {setCurrentState(0)}}>Recalculate</Button>
+                    <Button variant='contained' onClick={() => {setCurrentState(1)}}>Recalculate</Button>
                 </BTN>
                 <Back/>
             </div>
