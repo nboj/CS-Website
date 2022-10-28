@@ -111,9 +111,9 @@ const Slots = () => {
         setLeverDown(true)
         setClickedSpin(true)
         if (!cheats)
-            setPicks(picks.map(item => utils.roundedRandom(0,max))) 
+            setPicks(picks.map(item => utils.flooredRandom(0,max))) 
         else {
-            const ran = utils.roundedRandom(0, max)
+            const ran = utils.flooredRandom(0, max)
             setPicks(picks.map(item => ran))
         }
     } 

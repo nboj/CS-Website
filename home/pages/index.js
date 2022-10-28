@@ -103,7 +103,8 @@ const defaultLinks = [
   {title: 'Lab #6', class: Lab6},
   {title: 'Lab #7', class: Lab7},
   {title: 'Lab #8', class: Lab8},
-  {title: 'Lab #9', class: Lab9}
+  {title: 'Lab #9', class: Lab9},
+  {href: '/random-test', title: 'Random Test', link: true}
 ]
 
 const Home = () => {  

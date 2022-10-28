@@ -1,3 +1,4 @@
+
 class Lab9 { 
     static GetLinks = () => {
         return [ 
