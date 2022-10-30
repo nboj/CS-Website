@@ -38,19 +38,18 @@ const Slot = ({offset, spin, onAnimationComplete, delayMultiplier=0, stiffnessMu
         <SlotStyles ref={ref} offset={offset} style={style} id={`slot${delayMultiplier}`}/>
     ))
 
-    const MotionSlot = motion(Component) 
+    const MotionSlot = motion(Component)
 
     const getRandomSpin = () => {
         return getOffset(offset+1)*(-utils.random(50*delayMultiplier, 60*delayMultiplier))
     }
- 
-    const [current, setCurrent] = useState(0) 
-    const x = useSpring(utils.random(0, 3), { stiffness: 100*stiffnessMultiplier, damping: 17})   //, restDelta: 5, restSpeed: 5 
-    var times = 0
+    const [current, setCurrent] = useState(0)
+    const x = useSpring(current, { stiffness: 100*stiffnessMultiplier, damping: 17})   //, restDelta: 5, restSpeed: 5
+    let times = 0
     
     useEffect(() => { 
         if (spin) {  
-            const value = getRandomSpin() 
+            const value = getRandomSpin()
             const startingValue = current - 130;
             x.set(startingValue)
             const unsubX = x.onChange(latest => {
@@ -70,7 +69,7 @@ const Slot = ({offset, spin, onAnimationComplete, delayMultiplier=0, stiffnessMu
                             }
                             return;
                         case (2):  
-                            if (latest == getOffset(offset) && spin) {
+                            if (latest === getOffset(offset) && spin) {
                                 onAnimationComplete()
                             }
                             return
@@ -83,12 +82,13 @@ const Slot = ({offset, spin, onAnimationComplete, delayMultiplier=0, stiffnessMu
     }, [spin])  
 
     useEffect(() => {
-        setCurrent(getOffset(utils.random(0, 3)))  
+        const ran = utils.flooredRandom(0, 1000)
+        setCurrent(ran)
+        x.set(ran)
     }, []) 
     
     return (
-        <MotionSlot style={{ backgroundPosition: `50% ${current}px` }}> 
-        </MotionSlot>  
+        <MotionSlot style={{backgroundPosition: `50% ${current}px`}} />
     )
 } 
 

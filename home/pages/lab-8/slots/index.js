@@ -1,6 +1,6 @@
 // built in components 
 import Head from 'next/head'
-import { useEffect, useState, forwardRef, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 // my components
 import Back from '../../../components/Back'
 import utils from '../../../components/helper-classes/utils'
@@ -42,7 +42,7 @@ const Styles = styled.div`
 /* -machineOffset*0 */
     @keyframes lever {
         0% {
-            background-position: center ${-machineOffset*0}px;
+            background-position: center 0px;
         }
         100% {
             background-position: center ${-machineOffset*5}px;
@@ -55,17 +55,17 @@ const Styles = styled.div`
         background-position: center 0px;
         background-repeat: no-repeat;
         width: 840px;
-        height: 526.4px;     
+        height: 526.4px;
         animation-duration: 0.2s;
-        animation-timing-function: steps(5);  
+        animation-timing-function: steps(5);
         animation-iteration-count: 2;
-        animation-direction: alternate; 
-    } 
+        animation-direction: alternate;
+    }
 `; 
  
 
 const Slots = () => { 
-    var completeCount = 0; 
+    let completeCount = 0;
     const [offset1, setOffset1] = useState(0)
     const [offset2, setOffset2] = useState(0)
     const [offset3, setOffset3] = useState(0)
@@ -87,7 +87,7 @@ const Slots = () => {
         if (removeCount > 1) {
             animatedPoints.map((item, index) => {
                 if (index <= removeCount) {
-                    setAnimatedPoints(points => points.filter((__, i) => i != 0))
+                    setAnimatedPoints(points => points.filter((__, i) => i !== 0))
                 } else {
                     return
                 }
@@ -111,10 +111,10 @@ const Slots = () => {
         setLeverDown(true)
         setClickedSpin(true)
         if (!cheats)
-            setPicks(picks.map(item => utils.flooredRandom(0,max))) 
+            setPicks(picks.map(() => utils.flooredRandom(0,max)))
         else {
             const ran = utils.flooredRandom(0, max)
-            setPicks(picks.map(item => ran))
+            setPicks(picks.map(() => ran))
         }
     } 
 
@@ -137,7 +137,7 @@ const Slots = () => {
             if (completeCount >= 2) {
                 setLeverDown(false)
                 completeCount = 0;  
-                if (prevPicks[0] == prevPicks[1] && prevPicks[0] == prevPicks[2]) {
+                if (prevPicks[0] === prevPicks[1] && prevPicks[0] === prevPicks[2]) {
                     setCredits(credits => credits + 10)   
                     addAnimatedPoint({color: 'green', fontWeight: '600'}, '+10')
                 }  
@@ -158,7 +158,7 @@ const Slots = () => {
 
     }
     
-    const autoplayInterval = useInterval(ap, 1000)
+   useInterval(ap, 1000)
 
 
     useEffect(() => {
@@ -166,14 +166,6 @@ const Slots = () => {
             prevPicks = picks
         }
     }, [spin])
-
-    useEffect(() => {  
-        completeCount = 0; 
-        setOffsets.map((item) => {
-            item(utils.random(0, max))
-        }) 
-        return () => clearInterval(autoplayInterval)
-    }, []) 
 
     const reset = () => {
         const c = 20-credits
@@ -194,9 +186,9 @@ const Slots = () => {
             </div>
             <div className='flex flex-col justify-center items-center w-full h-screen'> 
                 <div className='slots-container flex flex-row justify-center items-center' style={leverDown?{columnGap: '34.6px', animationName: 'lever'}:{columnGap: '34.6px'}}> 
-                    <Slot offset={offset1} spin={spin} onAnimationComplete={handleComplete} delayMultiplier={1} stiffnessMultiplier={1.4}></Slot>
-                    <Slot offset={offset2} spin={spin} onAnimationComplete={handleComplete} delayMultiplier={1.3} stiffnessMultiplier={1.3}></Slot>
-                    <Slot offset={offset3} spin={spin} onAnimationComplete={handleComplete} delayMultiplier={1.6} stiffnessMultiplier={1.2}></Slot>
+                    <Slot offset={offset1} spin={spin} onAnimationComplete={handleComplete} delayMultiplier={1} stiffnessMultiplier={1.4} />
+                    <Slot offset={offset2} spin={spin} onAnimationComplete={handleComplete} delayMultiplier={1.3} stiffnessMultiplier={1.3} />
+                    <Slot offset={offset3} spin={spin} onAnimationComplete={handleComplete} delayMultiplier={1.6} stiffnessMultiplier={1.2} />
                 </div> 
                 <div className='flex flex-row justify-center items-center gap-5'>
                     <Button variant='outlined' color='inherit' sx={{color: '#fee440'}} disabled={spin || credits <= 0 || autoplay} onClick={() => {handleSpin()}}>Spin!</Button> 
