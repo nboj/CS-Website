@@ -103,7 +103,7 @@ const defaultLinks = [
   {title: 'Lab #6', class: Lab6},
   {title: 'Lab #7', class: Lab7},
   {title: 'Lab #8', class: Lab8},
-  {title: 'Lab #9', class: Lab9},
+  {title: 'Lab #9', class: Lab9, current: true},
   {href: '/random-test', title: 'Random Test', link: true}
 ]
 
@@ -111,12 +111,7 @@ const Home = () => {
   const [links, setLinks] = useState([])
   const [homeLink, setHomeLink] = useState() 
 
-  const reset = (currentLab) => { 
-    defaultLinks.map(item => {
-      if (item.title == currentLab) { 
-        item.current = true
-      }
-    })
+  const reset = () => {
     setLinks(defaultLinks)
     setHomeLink({
       href: 'https://web.cs.kent.edu/~cauman/',
@@ -127,14 +122,14 @@ const Home = () => {
   }
 
   useEffect(() => {
-    reset('Lab #8') 
+    reset()
   }, [])
 
-  const handleLink = (e, links, index) => {
+  const handleLink = async (e, links, index) => {
     e.preventDefault() 
     const link = links[index]
     if (link.link) {
-      Router.push(`${links[index].href}`)
+      await Router.push(`${links[index].href}`)
     } else {
       setLinks(links[index].class.GetLinks())  
       setHomeLink({
@@ -145,10 +140,10 @@ const Home = () => {
   }
 
 
-  const handleHomeLink = (e, href) => {  
+  const handleHomeLink = async (e, href) => {
     e.preventDefault()  
     if (href) {
-      Router.push(href)
+      await Router.push(href)
     } else {
       reset()
     }

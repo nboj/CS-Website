@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import { Button, CircularProgress } from '@mui/material'
 import Back from '../../components/Back'
+import styles from '../../styles/lab-9.module.scss'
 
 import styled from 'styled-components'
 
@@ -66,7 +67,7 @@ const RandomTest = () => {
             return (
                 <div className='w-full h-screen flex flex-col gap-5 justify-center items-center'>
                     <div className='w-full h-fit flex justify-center items-center'>
-                        <Button onClick={() => {setCurrentState(1)}} variant='contained' sx={{backgroundColor: '#3a86ff', padding: '20px 30px'}}>Calculate</Button>
+                        <Button onClick={() => {setCurrentState(1)}} classes={{root: styles.btn}} variant='contained'>Calculate</Button>
                     </div>
                     <Back/>
                 </div>
@@ -99,7 +100,7 @@ const RandomTest = () => {
                             <p className='font-bold mx-3'>Ceil Avg: {ceilAvg}%</p>
                         </Grid>
                     </div>
-                        <Button variant='contained' onClick={() => {setCurrentState(1)}} sx={{backgroundColor: '#3a86ff', padding: '20px 30px'}}>Recalculate</Button>
+                        <Button variant='contained' onClick={() => {setCurrentState(1)}} classes={{root: styles.btn}} sx={{backgroundColor: '#3a86ff', padding: '20px 30px'}}>Recalculate</Button>
                     <Back/>
                 </div>
             )
