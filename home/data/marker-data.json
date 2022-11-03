@@ -14,7 +14,7 @@
     },
     {
       "name": "Kent State University",
-      "description": "This is where the magic happens!<br/><a href='' target='_blank'>KSU - Homepage</a>",
+      "description": "This is where the magic happens!<br/><a href='https://www.kent.edu' target='_blank'>KSU - Homepage</a>",
       "latLng": {"lat": 41.153759, "lng": -81.349892},
       "imgSrc": "https://s3-external-1.amazonaws.com/youvisit-img/Assets/img/locations/80028/1280_profile.jpg?v=1593799815"
     }
