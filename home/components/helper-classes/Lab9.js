@@ -1,7 +1,8 @@
 
 class Lab9 { 
     static GetLinks = () => {
-        return [ 
+        return [
+			{href: '/lab-9/google-maps', title: 'Google Maps', link: true}
         ]
     }  
 }

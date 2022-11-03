@@ -41,7 +41,7 @@ const Styles = styled.div`
 `;
 
 
-const Back = ({variant='dark'}) => {
+const Back = ({variant='dark', className}) => {
     const [hover, setHover] = useState(false);
     const router = useRouter();
     const backVariants = {
@@ -56,7 +56,7 @@ const Back = ({variant='dark'}) => {
         router.back();
     }
     return (
-        <Styles className={`${variant}`}>
+        <Styles className={`${variant} ${className}`}>
             <motion.div 
                 onClick={handleOnClick}
                 className='flex justify-center items-center gap-1 cursor-pointer'

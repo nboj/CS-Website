@@ -1,0 +1,22 @@
+{
+  "markers": [
+    {
+      "name": "KSU - Math and Computer Sciences Building",
+      "description": "We do API&apos;s<br/><a href='http://www.cs.kent.edu/' target='_blank'>CS Department Website</a>",
+      "latLng": {"lat": 41.144898, "lng": -81.341536},
+      "imgSrc": "https://localist-images.azureedge.net/photos/33485959919830/card/3eaaf1bcca461dd94c6efd87df64512c52b3a48a.jpg"
+    },
+    {
+      "name": "Stow-Kent Starbucks",
+      "description": "Starbucks, is my favorite coffee stop when out running errands because it has a drive through window!!!",
+      "latLng": {"lat": 41.156800, "lng": -81.408520},
+      "imgSrc": "https://fastly.4sqi.net/img/general/600x600/34841838_D4_eexJ6-ADQ0mvWBNFXLyPz8RbPNSOC_xhXg3_r56Y.jpg"
+    },
+    {
+      "name": "Kent State University",
+      "description": "This is where the magic happens!<br/><a href='' target='_blank'>KSU - Homepage</a>",
+      "latLng": {"lat": 41.153759, "lng": -81.349892},
+      "imgSrc": "https://s3-external-1.amazonaws.com/youvisit-img/Assets/img/locations/80028/1280_profile.jpg?v=1593799815"
+    }
+  ]
+}

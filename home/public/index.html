@@ -1,0 +1,135 @@
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Google API</title>
+    <style>
+        html, body, #map-canvas {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+    </style>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHFjv8_S4Nx_MF5q0eypFXhjEy0sLrY0k">
+    </script>
+    <script type="text/javascript">
+
+		function initialize() {
+
+			var myLatlng1 = new google.maps.LatLng(41.149090,-81.342712);
+			var myLatlng2 = new google.maps.LatLng(41.156718,-81.40882);
+			var myLatlng3 = new google.maps.LatLng(41.144762,-81.341711);
+
+			var mapOptions = {
+				zoom: 12,
+				center: myLatlng1,
+				mapTypeId: google.maps.MapTypeId.ROADMAP   // ROADMAP, HYBRID, SATELLITE, TERRAIN
+			}
+
+// The map and options
+
+			var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+
+// Stuff for first locator
+
+			var marker1 = new google.maps.Marker({
+				position: myLatlng1,
+				map: map,
+				title: 'Kent State University'
+			});
+
+			var contentString1 =
+				'<div id="content1" style="width:170px">'+
+				'<div id="siteNotice1">'+
+                '<img width="300px" height="100px" style="object-fit: cover; object-position: center;" alt="Kent state entrance" src="https://www-s3-live.kent.edu/s3fs-root/s3fs-public/styles/normal_banner/public/administrative-group/landingpage.jpg?itok=bNTzjDGT"/>' +
+				'</div>'+
+				'<h3 id="Heading1">KSU - Kent State University</h3>'+
+				'<div id="bodyContent1">'+
+				'<p><b>Kent State</b>, is situated in the Kent State University.' +
+				'<a href="https://www.kent.edu" target="_blank">' +
+				'KSU' +
+				'</p>' +
+				'</div>' +
+				'</div>';
+
+			var infowindow1 = new google.maps.InfoWindow({
+				content: contentString1
+			});
+
+			google.maps.event.addListener(marker1, 'click', function() {
+				infowindow1.open(map,marker1);
+			});
+
+// Stuff for second locator
+
+			var contentString2 =
+				'<div id="content2" style="width:170px">'+
+				'<div id="siteNotice2">'+ '<img width="300px" height="100px" style="object-fit: cover; object-position: center; alt="Starbucks in kent ohio" src="https://www.gannett-cdn.com/presto/2021/07/23/NREC/5b5b8bf3-ab0a-4700-ae63-bd961a95f6ce-Kent_Starbucks_072321_LS04.JPG">' +
+				'</div>' +
+				'<h3 id="Heading2">Stow-Kent Starbucks</h3>'+
+				'<div id="bodyContent2">'+
+				'<p><b>Starbucks</b>, is my favorite coffee stop when out running errands ' +
+				'because it has a drive through window!!!' +
+				'</p>'+
+				'</div>'+
+				'</div>';
+
+			var infowindow2 = new google.maps.InfoWindow({
+				content: contentString2
+			});
+
+			var marker2 = new google.maps.Marker({
+				position: myLatlng2,
+				map: map,
+				title: 'Stow-Kent Starbucks'
+			});
+
+			google.maps.event.addListener(marker2, 'click', function() {
+				infowindow2.open(map,marker2);
+			});
+
+
+// Stuff for third locator
+
+			var contentString3 =
+				'<div id="content3" style="width:170px">'+
+				'<div id="siteNotice3">'+ '<img width="300px" style="object-fit: cover; object-position: center;" height="100px" alt="KSU - Math and science building" src="https://csm.kennesaw.edu/_ldp/.private_ldp/a173332/production/master/76e913b3-b652-4a7f-9a05-d77ac9320cf2.jpg">' +
+				'</div>'+
+				'<h3 id="Heading3">KSU - Math and Computer Sciences Building</h3>'+
+				'<div id="bodyContent3">'+
+				'<p><b>We do API\'s</b> <br>' +
+				'<a href="http:www.cs.kent.edu"> CS Department Website</a>' +
+				'</p>' +
+				'</div>' +
+				'</div>';
+
+			var infowindow3 = new google.maps.InfoWindow({
+				content: contentString3
+			});
+
+			var marker3 = new google.maps.Marker({
+				position: myLatlng3,
+				map: map,
+				title: 'KSU CS Department'
+			});
+
+			google.maps.event.addListener(marker3, 'click', function() {
+				infowindow3.open(map,marker3);
+			});
+
+
+		}  // end of initialize function
+
+		//call the initialize function when the page loads
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+</head>
+
+
+<body>
+<CENTER> <h2> Google API Lab Example </h2> </CENTER>
+<div id="map-canvas"></div>
+</body>
