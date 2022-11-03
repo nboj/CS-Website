@@ -171,7 +171,7 @@ const GoogleMaps = (props) => {
 				<title>Google API</title>
 			</Head>
 			<GitStyles>
-				<GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-9/google-maps/index.js' className='git-link' rightOffset={50}/>
+				<GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-9/google-api/index.js' className='git-link' rightOffset={50}/>
 			</GitStyles>
 			{
 				!loaded
