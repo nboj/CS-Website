@@ -158,7 +158,8 @@ const BackStyles = styled.div`
 const GoogleMaps = (props) => {
 	const [loaded, setLoaded] = useState(false)
 	const {isLoaded} = useLoadScript({
-		googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+		// googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+		googleMapsApiKey: 'AIzaSyAHFjv8_S4Nx_MF5q0eypFXhjEy0sLrY0k'
 	});
 	if (isLoaded)
 		setTimeout(() => {
