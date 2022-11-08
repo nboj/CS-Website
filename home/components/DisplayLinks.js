@@ -222,7 +222,7 @@ const DisplayLinks = ({links, homeLink, ...props}) => {
 					</div>
 					<h3>This webpage contains access to folders that will contain html files I create in my cs10051 labs</h3>
 					<ul key='link-container' className="list-style-none gap-10 flex flex-col flex-wrap w-fit" style={{height: 170}}>
-						<AnimatePresence mode='wait' initial={false}>
+						<AnimatePresence mode='popLayout' initial={false}>
 							{
 								links.map((item, index) => {
 									return (
