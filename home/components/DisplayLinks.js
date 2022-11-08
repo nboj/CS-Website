@@ -164,116 +164,116 @@ const DisplayLinks = ({links, homeLink, ...props}) => {
 	}
 	return (
 		<Styles>
-			<header className="w-full h-full flex flex-col justify-center items-center m-0 night-background">
-				<div className="inner-header flex flex-col w-fit">
-					<div className="flex flex-col w-full">
-						<h1 className="title">My cs10051 Lab Work</h1>
-						<h2 className='text-2xl name'>Christian Auman</h2>
-						<LayoutGroup>
-							
-							<h2 key='typewriter-container' className='text-xl'>
-								19 years old, computer scientist,&nbsp;
-								<span>{Array.from(word).map((item, index) => (
-									item === ' '
-									? <span key={`typewriter${index}`}>&nbsp;</span>
-									: <motion.div
-										className='inline-block'
-										key={`typewriter${index}`}
-										variants={variants}
-										initial='initial'
-										animate='anim'
-										transition={{
-											type: 'spring',
-											mass: 1,
-											stiffness: 100,
-											damping: 12,
-											bounce: 0,
-											opacity: {
-												type: 'spring',
-												mass: 1,
-												stiffness: 280,
-												damping: 120
-											}
-										}}
-									>
-										{item}
-									</motion.div>
-								))}
-								<motion.div
-									className='inline-block'
-									layout={'position'}
-									transition={{
-										type: 'spring',
-										mass: 0.1,
-										stiffness: 216,
-										damping: 14
-									}}
-								>
-									❚
-								</motion.div>
-							</span>
-							</h2>
-						</LayoutGroup>
-					</div>
-					<div>
-						<motion.a onClickCapture={(e) => homeLink && homeLink.isLink ? props.onHomeClick(e, homeLink.href) : props.onHomeClick(e)}
-						   href={homeLink && homeLink.isLink ? homeLink.href : ''}><p
-							className="link-button">{homeLink ? homeLink.title : ''}</p></motion.a>
-					</div>
-					<h3>This webpage contains access to folders that will contain html files I create in my cs10051 labs</h3>
-					<ul key='link-container' className="list-style-none gap-10 flex flex-col flex-wrap w-fit" style={{height: 170}}>
-						<AnimatePresence mode='popLayout' initial={false}>
-							{
-								links.map((item, index) => {
-									return (
-										<motion.li
-											initial={{
-												opacity: 0,
-												x: 100
-											}}
-											animate={{
-												opacity: 1,
-												x: 0
-											}}
-											exit={{
-												opacity: 0,
-												x: -20
-											}}
-											key={`${item.href}/${index}`}
-											className='w-fit'
-											transition={{
-												type: 'spring',
-												mass: 0.1,
-												stiffness: 449,
-												damping: 31,
-											}}
-										>
-											<div onClickCapture={(e) => props.onClick(e, links, index)}><span
-												id={index}
-												style={item.current ? {
-													backgroundColor: '#ffca3a',
-													color: 'white',
-													fontWeight: 500,
-													border: '1px solid yellow'
-												} : {}}
-												className='link-button'>{item.title}</span>
-											</div>
-										</motion.li>
-									)
-								})
-							}
-						</AnimatePresence>
-					</ul>
-					<div>
-						{
-							formattedDate && formattedTime
-								? <div><p><b>Date:&nbsp;&nbsp;</b>{formattedDate}</p><p>
-									<b>Time:&nbsp;&nbsp;</b>{formattedTime}</p></div>
-								: <CircularProgress sx={{color: '#cad2c5'}}/>
-						}
-					</div>
-				</div>
-			</header>
+			{/*<header className="w-full h-full flex flex-col justify-center items-center m-0 night-background">*/}
+			{/*	<div className="inner-header flex flex-col w-fit">*/}
+			{/*		<div className="flex flex-col w-full">*/}
+			{/*			<h1 className="title">My cs10051 Lab Work</h1>*/}
+			{/*			<h2 className='text-2xl name'>Christian Auman</h2>*/}
+			{/*			<LayoutGroup>*/}
+			{/*				*/}
+			{/*				<h2 key='typewriter-container' className='text-xl'>*/}
+			{/*					19 years old, computer scientist,&nbsp;*/}
+			{/*					<span>{Array.from(word).map((item, index) => (*/}
+			{/*						item === ' '*/}
+			{/*						? <span key={`typewriter${index}`}>&nbsp;</span>*/}
+			{/*						: <motion.div*/}
+			{/*							className='inline-block'*/}
+			{/*							key={`typewriter${index}`}*/}
+			{/*							variants={variants}*/}
+			{/*							initial='initial'*/}
+			{/*							animate='anim'*/}
+			{/*							transition={{*/}
+			{/*								type: 'spring',*/}
+			{/*								mass: 1,*/}
+			{/*								stiffness: 100,*/}
+			{/*								damping: 12,*/}
+			{/*								bounce: 0,*/}
+			{/*								opacity: {*/}
+			{/*									type: 'spring',*/}
+			{/*									mass: 1,*/}
+			{/*									stiffness: 280,*/}
+			{/*									damping: 120*/}
+			{/*								}*/}
+			{/*							}}*/}
+			{/*						>*/}
+			{/*							{item}*/}
+			{/*						</motion.div>*/}
+			{/*					))}*/}
+			{/*					<motion.div*/}
+			{/*						className='inline-block'*/}
+			{/*						layout={'position'}*/}
+			{/*						transition={{*/}
+			{/*							type: 'spring',*/}
+			{/*							mass: 0.1,*/}
+			{/*							stiffness: 216,*/}
+			{/*							damping: 14*/}
+			{/*						}}*/}
+			{/*					>*/}
+			{/*						❚*/}
+			{/*					</motion.div>*/}
+			{/*				</span>*/}
+			{/*				</h2>*/}
+			{/*			</LayoutGroup>*/}
+			{/*		</div>*/}
+			{/*		<div>*/}
+			{/*			<motion.a onClickCapture={(e) => homeLink && homeLink.isLink ? props.onHomeClick(e, homeLink.href) : props.onHomeClick(e)}*/}
+			{/*			   href={homeLink && homeLink.isLink ? homeLink.href : ''}><p*/}
+			{/*				className="link-button">{homeLink ? homeLink.title : ''}</p></motion.a>*/}
+			{/*		</div>*/}
+			{/*		<h3>This webpage contains access to folders that will contain html files I create in my cs10051 labs</h3>*/}
+			{/*		<ul key='link-container' className="list-style-none gap-10 flex flex-col flex-wrap w-fit" style={{height: 170}}>*/}
+			{/*			<AnimatePresence mode='popLayout' initial={false}>*/}
+			{/*				{*/}
+			{/*					links.map((item, index) => {*/}
+			{/*						return (*/}
+			{/*							<motion.li*/}
+			{/*								initial={{*/}
+			{/*									opacity: 0,*/}
+			{/*									x: 100*/}
+			{/*								}}*/}
+			{/*								animate={{*/}
+			{/*									opacity: 1,*/}
+			{/*									x: 0*/}
+			{/*								}}*/}
+			{/*								exit={{*/}
+			{/*									opacity: 0,*/}
+			{/*									x: -20*/}
+			{/*								}}*/}
+			{/*								key={`${item.href}/${index}`}*/}
+			{/*								className='w-fit'*/}
+			{/*								transition={{*/}
+			{/*									type: 'spring',*/}
+			{/*									mass: 0.1,*/}
+			{/*									stiffness: 449,*/}
+			{/*									damping: 31,*/}
+			{/*								}}*/}
+			{/*							>*/}
+			{/*								<div onClickCapture={(e) => props.onClick(e, links, index)}><span*/}
+			{/*									id={index}*/}
+			{/*									style={item.current ? {*/}
+			{/*										backgroundColor: '#ffca3a',*/}
+			{/*										color: 'white',*/}
+			{/*										fontWeight: 500,*/}
+			{/*										border: '1px solid yellow'*/}
+			{/*									} : {}}*/}
+			{/*									className='link-button'>{item.title}</span>*/}
+			{/*								</div>*/}
+			{/*							</motion.li>*/}
+			{/*						)*/}
+			{/*					})*/}
+			{/*				}*/}
+			{/*			</AnimatePresence>*/}
+			{/*		</ul>*/}
+			{/*		<div>*/}
+			{/*			{*/}
+			{/*				formattedDate && formattedTime*/}
+			{/*					? <div><p><b>Date:&nbsp;&nbsp;</b>{formattedDate}</p><p>*/}
+			{/*						<b>Time:&nbsp;&nbsp;</b>{formattedTime}</p></div>*/}
+			{/*					: <CircularProgress sx={{color: '#cad2c5'}}/>*/}
+			{/*			}*/}
+			{/*		</div>*/}
+			{/*	</div>*/}
+			{/*</header>*/}
 		</Styles>
 	);
 }
