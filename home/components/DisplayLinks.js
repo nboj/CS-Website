@@ -34,7 +34,7 @@ const Styles = styled.div`
 
   & .link-button {
     display: block;
-    background-color: #12E2C2;
+    background: #12E2C2;
     text-decoration: none;
     color: #212529;
     font-weight: 400;
@@ -119,7 +119,7 @@ const DisplayLinks = ({links, homeLink, ...props}) => {
 	const [formattedDate, setFormattedDate] = useState(null);
 	const [formattedTime, setFormattedTime] = useState(null);
 	const [word, setWord] = useState('')
-	const value = useTypewriter({words: words, initiate: true}) 
+	const value = useTypewriter({words: words, initiate: true})
 	useInterval(() => {
 		let current = new Date();
 		let fullHours = current.getHours()

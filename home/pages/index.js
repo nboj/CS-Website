@@ -161,6 +161,7 @@ const Home = () => {
         homeLink={homeLink}
       />
       <GitLink theme='dark' href='https://github.com/nboj/CS-Website/blob/main/home/pages/index.js' />
+      <GitLink theme='dark' href='https://github.com/nboj/CS-Website/blob/main/home/components/useTypewriter.js' rightOffset={200} blur={true} text='View custom typwriter effect src code' />
     </Styles>
   );
 }
