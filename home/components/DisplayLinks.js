@@ -119,6 +119,7 @@ const DisplayLinks = ({links, homeLink, ...props}) => {
 	const [formattedDate, setFormattedDate] = useState(null);
 	const [formattedTime, setFormattedTime] = useState(null);
 	const [word, setWord] = useState('')
+	const [moving, setMoving] = useState(true)
 	const value = useTypewriter({words: words, initiate: true})
 	useInterval(() => {
 		let current = new Date();
@@ -142,6 +143,8 @@ const DisplayLinks = ({links, homeLink, ...props}) => {
 	useEffect(() => {
 		value.then((res) => {
 			setWord(res.word)
+			console.log(res.moving.current)
+			setMoving(res.moving.current)
 		})
 	}, [value])
 	const variants = {
@@ -202,11 +205,25 @@ const DisplayLinks = ({links, homeLink, ...props}) => {
 								<motion.div
 									className='inline-block'
 									layout={'position'}
+									initial={{
+										opacity: 1
+									}}
+									animate={!moving?{
+										opacity:0,
+									}:{opacity: 1}}
 									transition={{
-										type: 'spring',
-										mass: 0.1,
-										stiffness: 216,
-										damping: 14
+										opacity: !moving?{
+											type: 'tween',
+											duration: 0.8,
+											loop: Infinity,
+											loopType: 'mirror',
+										}:{type: 'tween', duration: 0},
+										layout: {
+											type: 'spring',
+											mass: 0.1,
+											stiffness: 216,
+											damping: 14
+										}
 									}}
 								>
 									❚

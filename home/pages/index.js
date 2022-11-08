@@ -20,7 +20,7 @@ import Lab8 from '../components/helper-classes/Lab8';
 import Lab9 from '../components/helper-classes/Lab9';
 import GitLink from '../components/GitLink';
 
-const Styles = styled.div`  
+const Styles = styled.div`
 `;
 
 const defaultLinks = [

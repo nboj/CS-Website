@@ -22,6 +22,7 @@ const useTypewriter = async ({words, initiate}) => {
             setWord(res)
         })
     }
+    useEffect(() => {}, [moving.current])
     useEffect(() => {
         if (initiate) {
             typewriter()
@@ -106,7 +107,7 @@ const useTypewriter = async ({words, initiate}) => {
             })
         }, delay)
     })
-    return {word: word, moving: moving.current};
+    return {word: word, moving: moving};
 }
 
 export default useTypewriter;
