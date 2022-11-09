@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import {useRef, useState} from "react";
 import {Divider, Popover} from "@mui/material";
+import {motion} from 'framer-motion'
 
 const Styles = styled.div`
     & {
@@ -10,7 +11,6 @@ const Styles = styled.div`
         color: white;
         margin: 10px;
         z-index: 50;
-        font-weight: 400;
         transform: translate3d(${props => -props.rightOffset}px, ${props => props.topOffset}px, 0);
         background-color: #1f1f1f;
         border-radius: 3px;
@@ -64,6 +64,22 @@ const GitLink = ({href='https://github.com/nboj/CS-Website/tree/main/home', link
     const handleClick = (e) => {
         setOpen(open => !open)
     }
+    const variants = {
+        initial: {
+            opacity: 0
+        },
+        animate: (i) => ({
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                mass: 2.8,
+                stiffness: 177,
+                damping: 24,
+                delay: i*0.07+0.1
+            }
+        })
+        
+    }
     return (
         <Styles ref={ref} className={className} theme={theme} topOffset={topOffset} rightOffset={rightOffset}>
             <button className='btn' onClick={handleClick}>View source code</button>
@@ -76,7 +92,7 @@ const GitLink = ({href='https://github.com/nboj/CS-Website/tree/main/home', link
             >
                 <div className='flex flex-col'>
                     {links.map((item, index) => (
-                        <a href={item.href} onClick={handleClick} key={`gitlinks${index}`} className={`link ${index < links.length-1?'border-b-2 border-zinc-700':''}`} target="_blank" rel='noreferrer'>{item.text}</a>
+                        <motion.a variants={variants} custom={index} initial='initial' animate='animate' href={item.href} onClick={handleClick} key={`gitlinks${index}`} className={`link ${index < links.length-1?'border-b-2 border-zinc-700':''}`} target="_blank" rel='noreferrer'>{item.text}</motion.a>
                     ))}
                 </div>
             </StyledPopover>
