@@ -212,8 +212,10 @@ const DisplayLinks = ({links, homeLink, ...props}) => {
 									}:{opacity: 1}}
 									transition={{
 										opacity: !moving?{
-											type: 'tween',
-											duration: 0.8,
+											type: 'spring',
+											mass: 0.1,
+											stiffness: 216,
+											damping: 20,
 											repeat: Infinity,
 											repeatType: 'mirror',
 										}:{type: 'tween', duration: 0},
