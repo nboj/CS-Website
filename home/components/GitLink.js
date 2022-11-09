@@ -41,9 +41,9 @@ const StyledPopover = styled((props) => (
         padding: 10,
         right: 10 + props.rightOffset,
         color: props.theme==='dark'?'white':'black',
-        borderTopLeftRadius: 3,
-        borderBottomLeftRadius: 3,
-        borderBottomRightRadius: 3,
+        borderTopLeftRadius: 8,
+        borderBottomLeftRadius: 8,
+        borderBottomRightRadius: 8,
         minWidth: 200,
         boxShadow: 'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
         '& .link:hover': {
