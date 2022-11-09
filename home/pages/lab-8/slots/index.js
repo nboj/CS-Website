@@ -196,8 +196,10 @@ const Slots = () => {
                     <Button variant='outlined' color='inherit' sx={{color: '#fee440'}} onClick={() => setCheats(cheats => !cheats)}>Cheatmode {cheats?'on':'off'}</Button> 
                 </div>
             </div>
-            <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-8/slots/index.js' theme='dark' />  
-            <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/components/helper-classes/utils.js' topOffset={20} text='View random src code' theme='dark' />  
+            <GitLink text='View random src code' theme='dark' links={[
+                {href: 'https://github.com/nboj/CS-Website/blob/main/home/pages/lab-8/slots/index.js', text: 'Page source code'},
+                {href: 'https://github.com/nboj/CS-Website/blob/main/home/components/helper-classes/utils.js', text: 'Random source code'}
+            ]}/>
             <Back variant='light' />
         </Styles>
     )

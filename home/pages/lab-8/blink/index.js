@@ -93,7 +93,9 @@ const Blink = () => {
                     <Button onClick={() => {handleBlink(0.05)}} disabled={blink} variant='outlined'>fast blink</Button>
                 </div> 
             </div>
-            <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-8/blink/index.js' />
+            <GitLink links={[
+                {href: 'https://github.com/nboj/CS-Website/blob/main/home/pages/lab-8/blink/index.js', text: 'Page source'}
+            ]}/>
             <Back />
         </Styles>
     )

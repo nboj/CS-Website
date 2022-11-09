@@ -136,7 +136,7 @@ const GitStyles = styled.div`
   & .git-link {
     background: white;
     box-shadow: var(--shadow-elevation-high);
-    padding: 5px 10px;
+	color: black;
     text-decoration: none;
   }
 `
@@ -171,7 +171,9 @@ const GoogleMaps = (props) => {
 				<title>Google API</title>
 			</Head>
 			<GitStyles>
-				<GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-9/google-api/index.js' className='git-link' rightOffset={50}/>
+				<GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-9/google-api/index.js' className='git-link' theme='light' rightOffset={50} links={[
+					{href: 'https://github.com/nboj/CS-Website/blob/main/home/pages/lab-9/google-api/index.js', text: 'Source code'},
+				]}/>
 			</GitStyles>
 			{
 				!loaded

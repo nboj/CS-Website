@@ -143,7 +143,6 @@ const DisplayLinks = ({links, homeLink, ...props}) => {
 	useEffect(() => {
 		value.then((res) => {
 			setWord(res.word)
-			console.log(res.moving.current)
 			setMoving(res.moving.current)
 		})
 	}, [value])
@@ -215,8 +214,8 @@ const DisplayLinks = ({links, homeLink, ...props}) => {
 										opacity: !moving?{
 											type: 'tween',
 											duration: 0.8,
-											loop: Infinity,
-											loopType: 'mirror',
+											repeat: Infinity,
+											repeatType: 'mirror',
 										}:{type: 'tween', duration: 0},
 										layout: {
 											type: 'spring',
@@ -284,9 +283,9 @@ const DisplayLinks = ({links, homeLink, ...props}) => {
 					<div>
 						{
 							formattedDate && formattedTime
-								? <div><p><b>Date:&nbsp;&nbsp;</b>{formattedDate}</p><p>
-									<b>Time:&nbsp;&nbsp;</b>{formattedTime}</p></div>
-								: <CircularProgress sx={{color: '#cad2c5'}}/>
+							? <div><p><b>Date:&nbsp;&nbsp;</b>{formattedDate}</p><p>
+								<b>Time:&nbsp;&nbsp;</b>{formattedTime}</p></div>
+							: <CircularProgress sx={{color: '#cad2c5'}}/>
 						}
 					</div>
 				</div>

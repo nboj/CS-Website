@@ -174,7 +174,9 @@ const Lab6 = () => {
                         disableInput={disabled}
                         />
                 </motion.div>
-                <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-6/number-game/index.js' />
+                <GitLink links={[
+                    {href: 'https://github.com/nboj/CS-Website/blob/main/home/pages/lab-6/number-game/index.js', text: 'Page source'}
+                ]}/>
             </ShortLabTemplate>
         </Styles>
     );

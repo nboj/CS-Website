@@ -92,7 +92,9 @@ const Hello = () => {
                     <button onMouseLeave={handleMouseLeave} onMouseOver={handleMouseOver}>hover me</button>
                 </div>
             </div>
-            <GitLink href='https://github.com/nboj/CS-Website/blob/main/home/pages/lab-6/hello/index.js' />
+            <GitLink links={[
+                {href: 'https://github.com/nboj/CS-Website/blob/main/home/pages/lab-6/hello/index.js', text: 'Page Source'}
+            ]}/>
             <Back />
         </div>
     )
